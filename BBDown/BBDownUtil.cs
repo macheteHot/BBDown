@@ -24,22 +24,7 @@ namespace BBDown
     {
         public static async Task CheckUpdateAsync()
         {
-            try
-            {
-                var ver = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version!;
-                string nowVer = $"{ver.Major}.{ver.Minor}.{ver.Build}";
-                string redirctUrl = await GetWebLocationAsync("https://github.com/nilaoda/BBDown/releases/latest");
-                string latestVer = redirctUrl.Replace("https://github.com/nilaoda/BBDown/releases/tag/", "");
-                if (nowVer != latestVer && !latestVer.StartsWith("https"))
-                {
-                    Console.Title = $"发现新版本：{latestVer}";
-                    LogColor($"发现新版本：{latestVer}");
-                }
-            }
-            catch (Exception)
-            {
-                ;
-            }
+            
         }
 
         public static async Task<string> GetAvIdAsync(string input)
