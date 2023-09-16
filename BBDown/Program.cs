@@ -149,8 +149,6 @@ namespace BBDown
 
         private static async Task DoWorkAsync(MyOption myOption)
         {
-            //检测更新
-            CheckUpdateAsync();
             
             try
             {
